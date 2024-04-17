@@ -9,7 +9,7 @@ public class Hand implements Comparable<Hand> {
 
     public Hand(String[] cards) {
         this.cards = cards;
-        Arrays.sort(this.cards);
+        Arrays.sort(this.cards, (a, b) -> getCardValue(a) - getCardValue(b));
     }
 
     @Override
@@ -115,8 +115,8 @@ public class Hand implements Comparable<Hand> {
     }
 
     private boolean isStraight(Map<Character, Integer> valueCounts) {
-        int min = 14; 
-        int max = 2;  
+        int min = 14;
+        int max = 2; 
 
         for (int i = 2; i <= 14; i++) {
             if (valueCounts.containsKey((char) ('0' + i))) {
