@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Hand implements Comparable<Hand> {
-    private final String[] cards;
+	private final String[] cards;
 
     public Hand(String[] cards) {
         this.cards = cards;
-        Arrays.sort(this.cards, (a, b) -> getCardValue(a) - getCardValue(b));
+        Arrays.sort(this.cards, (a, b) -> getCardValue(b) - getCardValue(a)); 
     }
 
     @Override
@@ -17,11 +17,11 @@ public class Hand implements Comparable<Hand> {
         HandRank rank1 = determineRank();
         HandRank rank2 = other.determineRank();
 
-        if (rank1.getValue() != rank2.getValue()) {
+        if (rank1 != rank2) {
             return Integer.compare(rank1.getValue(), rank2.getValue());
         }
 
-        for (int i = 4; i >= 0; i--) {
+        for (int i = 0; i < 5; i++) {
             if (getCardValue(cards[i]) != getCardValue(other.cards[i])) {
                 return Integer.compare(getCardValue(cards[i]), getCardValue(other.cards[i]));
             }
@@ -115,8 +115,8 @@ public class Hand implements Comparable<Hand> {
     }
 
     private boolean isStraight(Map<Character, Integer> valueCounts) {
-        int min = 14;
-        int max = 2; 
+        int min = 14; 
+        int max = 2;  
 
         for (int i = 2; i <= 14; i++) {
             if (valueCounts.containsKey((char) ('0' + i))) {

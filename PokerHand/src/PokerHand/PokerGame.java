@@ -20,7 +20,7 @@ public class PokerGame {
             e.printStackTrace();
         }
 
-        System.out.println("Número de vitórias do Jogador 1: " + player1Wins);
+        System.out.println("Number of times player 1 won: " + player1Wins);
 	}
 
 }
