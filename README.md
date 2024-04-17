@@ -11,8 +11,10 @@ What I like about my solution:
   - The use of Streams and Lambda Expressions makes the code more concise and readable.
   - Separating the hand comparison logic into a separate class makes the code more modular and easier to maintain.
   - The approach of unit testing ensures the robustness of the hand comparison logic.
+
 What I don't like about my solution:
   - There was still an issue with the hand comparison logic, resulting in an incorrect outcome.
   - The complexity of the hand comparison logic could be reduced and simplified.
+
 New technologies or approaches used:
   - Using Streams and Lambda Expressions for collection manipulation was a new and interesting approach for me.
